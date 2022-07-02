@@ -9,6 +9,7 @@ const HomeContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
 `
 const Left = styled.div`
   flex: 2;
@@ -33,6 +34,18 @@ const Home = () => {
       <CenterSection/>
     </Center>
     <Right>
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
       <RightSection />
     </Right>
     </HomeContainer>

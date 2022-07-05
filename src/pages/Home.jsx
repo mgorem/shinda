@@ -9,18 +9,27 @@ const HomeContainer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
+  background-color: #080808;
+  padding: 20px;
 `
 const Left = styled.div`
   flex: 2;
-  background-color: navy;
+  background-color: #242832;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 `
 const Center = styled.div`
   flex: 8;
-  background-color: cadetblue;
+  background-color: #01060e;
+  color: #fff;
 `
 const Right = styled.div`
   flex: 2;
-  background-color: navy;
+  background-color: #01060e;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 `
 
 const Home = () => {
@@ -33,6 +42,18 @@ const Home = () => {
       <CenterSection/>
     </Center>
     <Right>
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
+      <RightSection />
       <RightSection />
     </Right>
     </HomeContainer>

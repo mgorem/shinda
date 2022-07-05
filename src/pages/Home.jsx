@@ -19,6 +19,7 @@ const Left = styled.div`
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  display: flex;
 `
 const Center = styled.div`
   flex: 8;

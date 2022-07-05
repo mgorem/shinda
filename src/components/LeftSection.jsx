@@ -14,14 +14,31 @@ const Container = styled.div`
   justify-content: space-between;
 `
 const LeftTopSection = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 `
 const LogoContainer = styled.div`
-  font-size: 7px;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 30px;
+`
+const IconContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+const SingleIconContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 30px;
+  margin: 0 auto;
+  background-color: maroon;
+  
 `
 const LeftBottomSection = styled.div`
   display: flex;
@@ -36,21 +53,35 @@ const LeftSection = () => {
     <Container>
       <LeftTopSection>
         <LogoContainer>
-        <h1>SHINDA 24/7</h1>
+          <h1>SHINDA 24/7</h1>
         </LogoContainer>
-      <HomeOutlinedIcon />
-      Home
-      <NotificationsNoneOutlinedIcon />
-      Notifications
-      <WorkHistorySharpIcon />
-      History
-      <SportsEsportsOutlinedIcon />
-      Players
+        <IconContainer>
+        <SingleIconContainer>
+          <HomeOutlinedIcon />
+              Home
+        </SingleIconContainer>
+        <SingleIconContainer>
+        <NotificationsNoneOutlinedIcon />
+            Notifications
+        </SingleIconContainer>
+        <SingleIconContainer>
+        <WorkHistorySharpIcon />
+            History
+        </SingleIconContainer>
+        <SingleIconContainer>
+        <SportsEsportsOutlinedIcon />
+            Players
+        </SingleIconContainer>
+        </IconContainer>
       </LeftTopSection>
 
       <LeftBottomSection>
-      <AccountBoxRoundedIcon />
-      <p>Help & Support</p>
+        <IconContainer>
+          <SingleIconContainer>
+          <AccountBoxRoundedIcon />
+          <p>Help & Support</p>
+          </SingleIconContainer>
+        </IconContainer>
       </LeftBottomSection>
     </Container>
   )

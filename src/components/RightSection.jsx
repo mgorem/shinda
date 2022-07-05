@@ -5,8 +5,10 @@ const Container = styled.div`
   width: 90%;
   height: 6%;
   margin: 14px auto 10px auto;
-  border: 5px solid yellow;
-  background-color: maroon;
+  border: none;
+  border-radius: 8px;
+  background-color: #242832;
+  color: #fff;
 `
 
 const RightSection = () => {

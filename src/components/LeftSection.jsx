@@ -7,31 +7,37 @@ import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined
 import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 
 const Container = styled.div`
-  width: 90%;
-  height: 90%;
-  margin: 40px auto 10px auto;
-  border: 5px solid yellow;
-  background-color: maroon;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
+  justify-content: space-between;
 `
 const LeftTopSection = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 `
+const LogoContainer = styled.div`
+  font-size: 7px;
+`
 const LeftBottomSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   margin-top: auto;
   margin-bottom: 20px;
+  background-color: green;
 `
 const LeftSection = () => {
   return (
     <Container>
       <LeftTopSection>
-      <h1>SHINDA 24/7</h1>
+        <LogoContainer>
+        <h1>SHINDA 24/7</h1>
+        </LogoContainer>
       <HomeOutlinedIcon />
       Home
       <NotificationsNoneOutlinedIcon />

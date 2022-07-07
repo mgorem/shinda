@@ -304,6 +304,7 @@ const SingleRightBottomBarContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   padding: 10px;
+  color: green;
 `
 const SingleBottomBarContainer = styled.div`
   width: 100%;
@@ -467,19 +468,19 @@ const CenterSection = () => {
         </TopRightBottomBarCenter>
         <SingleRightBottomBarContainer>
           <SingleBottomBarContainer>
-              One
+              Name
             </SingleBottomBarContainer>
             <SingleBottomBarContainer>
-              Two
+              2.5x
             </SingleBottomBarContainer>
             <SingleBottomBarContainer>
-              Three
+              1,200
             </SingleBottomBarContainer>
             <SingleBottomBarContainer>
-              Four
+              +3,000
             </SingleBottomBarContainer>
             <SingleBottomBarContainer>
-              Five
+              431717030a86a...
           </SingleBottomBarContainer>
         </SingleRightBottomBarContainer>
       </RightBottomBarCenter>

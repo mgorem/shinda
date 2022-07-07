@@ -14,15 +14,43 @@ const Container = styled.div`
 const CardContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 15px auto;
+  
+`
+const InnerNameContainer = styled.div`
+  
+`
+const InnerStatsContainer = styled.div`
+  width: 50px;
+  padding: 5px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ff7f00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+`
+const InnerAmountContainer = styled.div`
+  
 `
 
 const RightSectionCard = () => {
   return (
     <Container>
       <CardContainer>
-        Display Card
+        <InnerNameContainer style={{marginLeft:"20px"}}>
+          Username...
+        </InnerNameContainer>
+        <InnerStatsContainer>
+          2.3x
+        </InnerStatsContainer>
+        <InnerAmountContainer style={{marginRight:"20px"}}>
+          4,000
+        </InnerAmountContainer>
       </CardContainer>
     </Container>
   )

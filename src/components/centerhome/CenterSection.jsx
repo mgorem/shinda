@@ -7,6 +7,9 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import HistoryIcon from '@mui/icons-material/History';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import ControlPointDuplicateIcon from '@mui/icons-material/ControlPointDuplicate';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
 
 const CenterContainer = styled.div`
@@ -123,15 +126,14 @@ const WinBox = styled.div`
 const RightMidBarCenter = styled.div`
   flex: 8;
   /* background-image: url("images/mountains.jpg"); */
+  background-size: cover;
+  /* opacity: 0.5; */
   height: 100%;
-  border: 2px solid #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* object-fit: cover; */
   background-repeat: no-repeat;
-/* position: relative; */
 `
 const RocketCircle = styled.div`
   width: 300px;
@@ -145,24 +147,91 @@ const RocketCircle = styled.div`
   justify-content: center;
   z-index: 999;
   opacity: 0.7;
-  /* position: absolute;
-  margin-top: 220px ;
-  margin-left: 250px; */
 `
 const RightMidBarBottomContainer = styled.div`
-  
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `
 const RightMidBarAmount = styled.div`
-  
+  width: 35%;
+  height:100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `
 const RightMidBarBet = styled.div`
-  
+  width: 15%;
+  height:40px;
+  margin-top: 25px;
+  color: #ff7f00;
+  border: 2px solid #ff7f00;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 const RightMidBarStats = styled.div`
-  
+  width: 35%;
+  height:100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `
 const RightMidBarBottomInfo = styled.div`
-  
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+const BetAmountContainer = styled.div`
+  width: 100%;
+  height: 50%;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+`
+const BetAmountContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  font-weight: 600;
+`
+const RightMidBarAmountHeading = styled.div`
+  color: #ff7f00;
+  font-size: 12px;
+  font-weight: 600;
+`
+const ArrowIcons = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`
+const MidBarBottomContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 20px;
+  font-size: 12px;
+  font-weight: 500;
+`
+const MidBarBottomInnerContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
 `
 const BottomBarCenter = styled.div`
   width: 100%;
@@ -171,7 +240,6 @@ const BottomBarCenter = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 25px;
-  border: 2px solid #fff;
 `
 const LeftCenterBottomBar = styled.div`
   flex: 1;
@@ -208,19 +276,44 @@ const BottomNameContainer = styled.div`
   font-size: 10px;
   font-weight: 600;
 `
+const TopRightBottomBarCenter = styled.div`
+  width: 100%;
+  height: 40px;
+  background-color: #2d323f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+const SingleTopRightBarContainer = styled.div`
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10px;
+  padding-left: 10px;
+`
 const RightBottomBarCenter = styled.div`
   flex: 6;
   width: 100%;
   height: 100%;
   background-color: #04030e;
 `
-const TopRightBottomBarCenter = styled.div`
-  width: 100%;
-  height: 20%;
-  background-color: #2d323f;
+const SingleRightBottomBarContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  padding: 10px;
+  color: green;
+`
+const SingleBottomBarContainer = styled.div`
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 10px;
+  padding-left: 10px;
 `
 
 const CenterSection = () => {
@@ -281,13 +374,59 @@ const CenterSection = () => {
             <img src="images/rocketflames1.png" alt="rocket flames" style={{width:"70px", height:"70px"}}/>
             <h1 style={{fontSize:40, fontWeight: 500}}>5.20x</h1>
           </RocketCircle>
-          {/* <img src="images/mountains.jpg" alt="mountains" /> */}
           <RightMidBarBottomContainer>
-            <RightMidBarAmount>One</RightMidBarAmount>
-            <RightMidBarBet>Two</RightMidBarBet>
-            <RightMidBarStats>Three</RightMidBarStats>
-            <RightMidBarBottomInfo>Four</RightMidBarBottomInfo>
+            <RightMidBarAmount>
+              <RightMidBarAmountHeading>
+                BET AMOUNT
+              </RightMidBarAmountHeading>
+              <BetAmountContainer>
+                <BetAmountContent>
+                  2000
+                </BetAmountContent>
+                <ArrowIcons>
+                  <ArrowUpwardIcon />
+                  <ArrowDownwardIcon />
+                </ArrowIcons>
+              </BetAmountContainer>
+            </RightMidBarAmount>
+            <RightMidBarBet>
+              BET
+            </RightMidBarBet>
+            <RightMidBarStats>
+              <RightMidBarAmountHeading>
+                AUTO CASH X:
+              </RightMidBarAmountHeading>
+              <BetAmountContainer>
+              <BetAmountContent>
+                  4.3x
+              </BetAmountContent>
+                <ArrowIcons>
+                  <ArrowUpwardIcon />
+                  <ArrowDownwardIcon />
+                </ArrowIcons>
+              </BetAmountContainer>
+            </RightMidBarStats>
           </RightMidBarBottomContainer>
+          <RightMidBarBottomInfo>
+            <MidBarBottomContainer>
+            <MidBarBottomInnerContainer>
+              MAX TARGET: 70.1
+            </MidBarBottomInnerContainer>
+            <MidBarBottomInnerContainer>
+              WIN CHANCE: 55.2%
+            </MidBarBottomInnerContainer>
+            </MidBarBottomContainer>
+            <MidBarBottomContainer>
+            <MidBarBottomInnerContainer>
+            <FiberManualRecordIcon style={{fontSize:10, color:"green"}}/>
+              ONLINE: 1200
+            </MidBarBottomInnerContainer>
+            <MidBarBottomInnerContainer>
+            <FiberManualRecordIcon style={{fontSize:10, color:"blue"}}/>
+              PLAYING: 825
+            </MidBarBottomInnerContainer>
+            </MidBarBottomContainer>
+          </RightMidBarBottomInfo>
         </RightMidBarCenter>
       </MidBarCenter>
       <BottomBarCenter>
@@ -311,12 +450,39 @@ const CenterSection = () => {
       </LeftCenterBottomBar>
       <RightBottomBarCenter>
         <TopRightBottomBarCenter>
-          PLAYER
-          X-ODD
-          BET AMOUNT
-          PROFIT
-          HASH
+          <SingleTopRightBarContainer>
+            PLAYER
+          </SingleTopRightBarContainer>
+          <SingleTopRightBarContainer>
+            X-ODD
+          </SingleTopRightBarContainer>
+          <SingleTopRightBarContainer>
+            BET AMOUNT
+          </SingleTopRightBarContainer>
+          <SingleTopRightBarContainer>
+            PROFIT
+          </SingleTopRightBarContainer>
+          <SingleTopRightBarContainer>
+            HASH
+          </SingleTopRightBarContainer>
         </TopRightBottomBarCenter>
+        <SingleRightBottomBarContainer>
+          <SingleBottomBarContainer>
+              Name
+            </SingleBottomBarContainer>
+            <SingleBottomBarContainer>
+              2.5x
+            </SingleBottomBarContainer>
+            <SingleBottomBarContainer>
+              1,200
+            </SingleBottomBarContainer>
+            <SingleBottomBarContainer>
+              +3,000
+            </SingleBottomBarContainer>
+            <SingleBottomBarContainer>
+              431717030a86a...
+          </SingleBottomBarContainer>
+        </SingleRightBottomBarContainer>
       </RightBottomBarCenter>
       </BottomBarCenter>
     </CenterContainer>

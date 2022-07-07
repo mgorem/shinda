@@ -1,8 +1,7 @@
 import React from 'react'
-import LeftSection from '../components/LeftSection'
-import CenterSection from '../components/CenterSection'
-import RightSection from '../components/RightSection'
-
+import LeftSection from '../components/lefthome/LeftSection'
+import CenterSection from '../components/centerhome/CenterSection'
+import RightSection from '../components/righthome/RightSection'
 import styled from 'styled-components'
 
 const HomeContainer = styled.div`
@@ -11,7 +10,7 @@ const HomeContainer = styled.div`
   display: flex;
   overflow: hidden;
   background-color: #080808;
-  padding: 20px;
+  /* padding: 20px; */
 `
 const Left = styled.div`
   flex: 2;
@@ -19,7 +18,6 @@ const Left = styled.div`
   border: none;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  display: flex;
 `
 const Center = styled.div`
   flex: 8;

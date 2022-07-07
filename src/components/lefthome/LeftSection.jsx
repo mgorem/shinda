@@ -6,6 +6,7 @@ import WorkHistorySharpIcon from '@mui/icons-material/WorkHistorySharp';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 
+
 const Container = styled.div`
   color: #fff;
   display: flex;
@@ -14,17 +15,22 @@ const Container = styled.div`
   justify-content: space-between;
 `
 const LeftTopSection = styled.div`
+  flex: 6;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `
 const LogoContainer = styled.div`
+  flex: 2;
   font-size: 10px;
   font-weight: 600;
   margin: 30px;
 `
 const IconContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  flex: 6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,20 +39,31 @@ const IconContainer = styled.div`
 const SingleIconContainer = styled.div`
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 30px;
-  margin: 0 auto;
-  background-color: maroon;
-  
+  padding: 30px 0;
+  margin: 0;
 `
-const LeftBottomSection = styled.div`
+const IconBox = styled.div`
+  flex: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: auto;
-  margin-bottom: 20px;
-  background-color: green;
+  justify-content: center;
+`
+const IconName = styled.div`
+  flex: 2;
+  font-size: 12px;
+  margin-left: 20px;
+  font-weight: 600;
+`
+const LeftBottomSection = styled.div`
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 250px;
+  margin-bottom: 30px;
+  /* background-color: green; */
 `
 const LeftSection = () => {
   return (
@@ -57,20 +74,36 @@ const LeftSection = () => {
         </LogoContainer>
         <IconContainer>
         <SingleIconContainer>
-          <HomeOutlinedIcon />
-              Home
+              <IconBox>
+              <HomeOutlinedIcon />
+              </IconBox>
+              <IconName>
+              <span>Home</span>
+              </IconName>
         </SingleIconContainer>
         <SingleIconContainer>
-        <NotificationsNoneOutlinedIcon />
-            Notifications
+            <IconBox>
+              <NotificationsNoneOutlinedIcon />
+            </IconBox>
+            <IconName>
+              <span>Notifications</span>
+            </IconName>
         </SingleIconContainer>
         <SingleIconContainer>
-        <WorkHistorySharpIcon />
-            History
+            <IconBox>
+              <WorkHistorySharpIcon />
+            </IconBox>
+            <IconName>
+              <span>History</span>
+            </IconName>
         </SingleIconContainer>
         <SingleIconContainer>
-        <SportsEsportsOutlinedIcon />
-            Players
+            <IconBox>
+              <SportsEsportsOutlinedIcon />
+            </IconBox>
+            <IconName>
+              <span>Players</span>
+            </IconName>
         </SingleIconContainer>
         </IconContainer>
       </LeftTopSection>

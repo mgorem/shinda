@@ -16,8 +16,6 @@ const Left = styled.div`
   flex: 2;
   background-color: #242832;
   border: none;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
 `
 const Center = styled.div`
   flex: 8;

@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import RocketIcon from '@mui/icons-material/Rocket';
@@ -7,10 +7,11 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import HistoryIcon from '@mui/icons-material/History';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import ControlPointDuplicateIcon from '@mui/icons-material/ControlPointDuplicate';
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+// import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+// import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 const CenterContainer = styled.div`
   margin: 15px 10px;
@@ -18,7 +19,6 @@ const CenterContainer = styled.div`
 const TopBarCenter = styled.div`
   width: 100%;
   height: 60px;
-  /* background-color: pink; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +48,10 @@ const TopBarSingleStatsContainer = styled.div`
   justify-content: center;
   font-size: 12px;
   font-weight: 600;
+  cursor: pointer;
+  &:hover{
+    background-color: #ff7f00;
+  }
 `
 const MidBarCenter = styled.div`
   width: 100%;
@@ -64,7 +68,7 @@ const LeftMidBarCenter = styled.div`
   margin-right: 20px;
 `
 const Wallet = styled.button`
-  width: 90%;
+  width: 95%;
   height: 50px;
   background-color: #242832;
   color: #fff;
@@ -75,6 +79,7 @@ const Wallet = styled.button`
   border-radius: 6px;
   padding: 5px 20px;
   margin: 10px auto;
+  
 `
 const WalletContainer = styled.div`
   display: flex;
@@ -103,18 +108,25 @@ const DepositContainer1 = styled.div`
   font-weight: 600;
   border: none;
   border-radius: 6px;
+  margin-right: 10px;
 `
-const DepositContainer2 = styled.div`
+const DepositContainer2 = styled.button`
   width: 45%;
   height: 50px;
-  background-color: #ff7f00;
+  background-color: transparent;
+  color: #ff7f00;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
   font-weight: 600;
-  border: none;
+  border: 1px solid #ff7f00;
   border-radius: 6px;
+  &:hover {
+    color: #fff;
+    background-color: #ff7f00;
+    cursor: pointer;
+  }
 `
 const WinBox = styled.div`
   display: flex;
@@ -155,34 +167,24 @@ const RightMidBarBottomContainer = styled.div`
   align-items: center;
   justify-content: space-around;
 `
-const RightMidBarAmount = styled.div`
-  width: 35%;
-  height:100%;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-`
-const RightMidBarBet = styled.div`
+const RightMidBarBet = styled.button`
   width: 15%;
   height:40px;
-  margin-top: 25px;
+  margin-top: 30px;
   color: #ff7f00;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: transparent;
   border: 2px solid #ff7f00;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-`
-const RightMidBarStats = styled.div`
-  width: 35%;
-  height:100%;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  &:hover {
+    background-color: #ff7f00;
+    color: #fff;
+    cursor: pointer;
+  }
 `
 const RightMidBarBottomInfo = styled.div`
   width: 100%;
@@ -191,33 +193,12 @@ const RightMidBarBottomInfo = styled.div`
   align-items: center;
   justify-content: space-between;
 `
-const BetAmountContainer = styled.div`
-  width: 100%;
-  height: 50%;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  display: flex;
-  margin-top: 10px;
-  align-items: center;
-  justify-content: space-between;
-`
-const BetAmountContent = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 20px;
-  font-weight: 600;
-`
-const RightMidBarAmountHeading = styled.div`
-  color: #ff7f00;
-  font-size: 12px;
-  font-weight: 600;
-`
-const ArrowIcons = styled.div`
+const BetAmountInput = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
+  color: #ff7f00;
 `
 const MidBarBottomContainer = styled.div`
   display: flex;
@@ -232,6 +213,7 @@ const MidBarBottomInnerContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-right: 10px;
+  margin-left: 25px;
 `
 const BottomBarCenter = styled.div`
   width: 100%;
@@ -316,7 +298,27 @@ const SingleBottomBarContainer = styled.div`
   padding-left: 10px;
 `
 
-const CenterSection = () => {
+
+const CenterSection = (props) => {
+
+  const [stats, setStats] = useState([
+    {id: 1, value: '0.2x',},
+    {id: 1, value: '2.2x',},
+    {id: 1, value: '4.3x',},
+    {id: 1, value: '5.0x',},
+    {id: 1, value: '5.3x',},
+  ])
+
+  const handleStats = () => {
+    setStats(
+
+    )
+  }
+
+
+
+
+
   return (
     <CenterContainer>
       <TopBarCenter>
@@ -324,22 +326,12 @@ const CenterSection = () => {
           <AccountCircleOutlinedIcon style={{color:'#ff7f00', marginRight:20}}/>
           SERRIA
         </TopBarAccountContainer>
-        <TopBarStatsContainer>
-          <TopBarSingleStatsContainer>
-            0.2x
+        <TopBarStatsContainer key={stats.id} onClick={handleStats}>
+          {stats.map((stat) => (
+            <TopBarSingleStatsContainer>
+            {stat.value}
           </TopBarSingleStatsContainer>
-          <TopBarSingleStatsContainer style={{backgroundColor:'#ff7f00'}}>
-            2.2x
-          </TopBarSingleStatsContainer>
-          <TopBarSingleStatsContainer>
-            4.3x
-          </TopBarSingleStatsContainer>
-          <TopBarSingleStatsContainer>
-            5.0x
-          </TopBarSingleStatsContainer>
-          <TopBarSingleStatsContainer style={{backgroundColor:'#ff0000'}}>
-            5.3x
-          </TopBarSingleStatsContainer>
+          ))}
         </TopBarStatsContainer>
       </TopBarCenter>
       <MidBarCenter>
@@ -355,7 +347,13 @@ const CenterSection = () => {
           </Wallet>
           <DepositContainer>
            <DepositContainer1>
-             Kes. 500
+             <TextField placeholder='Kes 500'type='number'  sx={{
+                  input: {
+                    color: "#fff",
+                    background: "transparent",
+                  }
+                }}>
+             </TextField>
            </DepositContainer1>
            <DepositContainer2>
               <MonetizationOnIcon />
@@ -375,37 +373,73 @@ const CenterSection = () => {
             <h1 style={{fontSize:40, fontWeight: 500}}>5.20x</h1>
           </RocketCircle>
           <RightMidBarBottomContainer>
-            <RightMidBarAmount>
-              <RightMidBarAmountHeading>
-                BET AMOUNT
-              </RightMidBarAmountHeading>
-              <BetAmountContainer>
-                <BetAmountContent>
-                  2000
-                </BetAmountContent>
-                <ArrowIcons>
-                  <ArrowUpwardIcon />
-                  <ArrowDownwardIcon />
-                </ArrowIcons>
-              </BetAmountContainer>
-            </RightMidBarAmount>
+
+            {/* Amount Input */}
+            <BetAmountInput>
+            <Box
+                  component="form"
+                  sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                    input: {
+                      color: "#fff",
+                      background: "transparent"
+                    }
+                  }}
+                  noValidate
+                  autoComplete="off"
+                />
+                <p style={{marginBottom:"10px"}}>BET AMOUNT:</p>
+                <TextField id="outlined-basic" type='number' label="" variant="outlined" 
+                sx={{
+                  '& > :not(style)': { m: 0, width: '25sch' },
+                  input: {
+                    color: "#fff",
+                    background: "transparent",
+                    border:"none",
+                  }
+                }}
+                style={
+                  {backgroundColor:"transparent",
+                   border:" 1px solid #fff",
+                   borderRadius:"5px",
+                   fontWeight:60,
+                  }}/>
+            </BetAmountInput>
+
             <RightMidBarBet>
               BET
             </RightMidBarBet>
-            <RightMidBarStats>
-              <RightMidBarAmountHeading>
-                AUTO CASH X:
-              </RightMidBarAmountHeading>
-              <BetAmountContainer>
-              <BetAmountContent>
-                  4.3x
-              </BetAmountContent>
-                <ArrowIcons>
-                  <ArrowUpwardIcon />
-                  <ArrowDownwardIcon />
-                </ArrowIcons>
-              </BetAmountContainer>
-            </RightMidBarStats>
+
+          <BetAmountInput>
+            <Box
+                  component="form"
+                  sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                    input: {
+                      color: "#fff",
+                      background: "transparent"
+                    }
+                  }}
+                  noValidate
+                  autoComplete="off"
+                />
+                <p style={{marginBottom:"10px"}}>AUTO CASH X</p>
+                <TextField id="outlined-basic"type='number' label="" variant="outlined" 
+                sx={{
+                  '& > :not(style)': { m: 0, width: '25sch' },
+                  input: {
+                    color: "#fff",
+                    background: "transparent",
+                    border:"none",
+                  }
+                }}
+                style={
+                  {backgroundColor:"transparent",
+                   border:" 1px solid #fff",
+                   borderRadius:"5px",
+                   fontWeight:60,
+                  }}/>
+            </BetAmountInput>
           </RightMidBarBottomContainer>
           <RightMidBarBottomInfo>
             <MidBarBottomContainer>
@@ -477,7 +511,7 @@ const CenterSection = () => {
               1,200
             </SingleBottomBarContainer>
             <SingleBottomBarContainer>
-              +3,000
+              +3000
             </SingleBottomBarContainer>
             <SingleBottomBarContainer>
               431717030a86a...

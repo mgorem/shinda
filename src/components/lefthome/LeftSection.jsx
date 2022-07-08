@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import WorkHistorySharpIcon from '@mui/icons-material/WorkHistorySharp';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+import PolicyIcon from '@mui/icons-material/Policy';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 
@@ -41,8 +42,14 @@ const SingleIconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 0;
+  padding: 25px 0;
   margin: 0;
+  &:hover{
+    cursor: pointer;
+    border-bottom: 5px solid #ff7f00;
+    border-right: 5px solid #ff7f00;
+    border-radius: 10px;
+  }
 `
 const IconBox = styled.div`
   flex: 1;
@@ -73,7 +80,11 @@ const LeftSection = () => {
           <h1>SHINDA 24/7</h1>
         </LogoContainer>
         <IconContainer>
-        <SingleIconContainer>
+        <SingleIconContainer style={{
+          borderBottom: "5px solid #ff7f00",
+          borderRight: "5px solid #ff7f00",
+          borderRadius: "10px",
+        }}>
               <IconBox>
               <HomeOutlinedIcon />
               </IconBox>
@@ -83,18 +94,26 @@ const LeftSection = () => {
         </SingleIconContainer>
         <SingleIconContainer>
             <IconBox>
-              <NotificationsNoneOutlinedIcon />
+              <LeaderboardIcon />
             </IconBox>
             <IconName>
-              <span>Notifications</span>
+              <span>Leaderboard</span>
             </IconName>
         </SingleIconContainer>
         <SingleIconContainer>
             <IconBox>
-              <WorkHistorySharpIcon />
+              <HandshakeIcon />
             </IconBox>
             <IconName>
-              <span>History</span>
+              <span>User Agreement</span>
+            </IconName>
+        </SingleIconContainer>
+        <SingleIconContainer>
+            <IconBox>
+              <PolicyIcon />
+            </IconBox>
+            <IconName>
+              <span>Privacy Policy</span>
             </IconName>
         </SingleIconContainer>
         <SingleIconContainer>
@@ -111,7 +130,7 @@ const LeftSection = () => {
       <LeftBottomSection>
         <IconContainer>
           <SingleIconContainer>
-          <AccountBoxRoundedIcon />
+          <AccountBoxRoundedIcon style={{marginRight:"20px"}}/>
           <p>Help & Support</p>
           </SingleIconContainer>
         </IconContainer>

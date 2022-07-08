@@ -4,6 +4,7 @@ import CenterSection from '../components/centerhome/CenterSection'
 import RightSection from '../components/righthome/RightSection'
 import styled from 'styled-components'
 
+
 const HomeContainer = styled.div`
   width: 100vw;
   height: 100vh;
@@ -30,6 +31,7 @@ const Right = styled.div`
 `
 
 const Home = () => {
+
   return (
     <HomeContainer>
     <Left>
@@ -39,18 +41,6 @@ const Home = () => {
       <CenterSection/>
     </Center>
     <Right>
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
-      <RightSection />
       <RightSection />
     </Right>
     </HomeContainer>

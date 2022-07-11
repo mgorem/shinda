@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import { large } from '../../large-responsive'
+import { tablet } from '../../tablet-responsive'
+import { mobile } from '../../mobile-ressponsive'
 
 const SingleCardContainer = styled.div`
   width: 90%;
@@ -13,14 +16,10 @@ const SingleCardContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${large({fontSize: "10px",
+           fontWeight: "600",
+  })}
 `
-// const CardContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   margin: 15px auto;
-  
-// `
 const InnerNameContainer = styled.div`
   
 `

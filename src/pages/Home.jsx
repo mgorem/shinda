@@ -1,9 +1,14 @@
 import { useState } from 'react'
+import styled from 'styled-components'
 import LeftSection from '../components/lefthome/LeftSection'
 import CenterSection from '../components/centerhome/CenterSection'
 import RightSection from '../components/righthome/RightSection'
-import styled from 'styled-components'
+import MenuIcon from '@mui/icons-material/Menu';
+
 // import { feeds } from '../userfeed'
+import { large } from '../large-responsive'
+import { tablet } from '../tablet-responsive'
+import { mobile } from '../mobile-ressponsive'
 
 
 const HomeContainer = styled.div`
@@ -18,17 +23,21 @@ const Left = styled.div`
   flex: 2;
   background-color: #242832;
   border: none;
+  /* ${tablet({visibility: "hidden",
+  })} */
 `
 const Center = styled.div`
   flex: 8;
   background-color: #01060e;
   color: #fff;
-`
+  `
 const Right = styled.div`
   flex: 2;
   background-color: #01060e;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  ${large({oveflow: "hidden"
+  })}
 `
 
 const Home = () => {
@@ -48,6 +57,8 @@ const Home = () => {
     {id: 1, name: "John land", stats: "2.2x", amount: 3000},
     {id: 1, name: "John land", stats: "2.2x", amount: 3000},
   ])
+
+  const [showMenu, setShowMenu] = useState(true)
 
   return (
     <HomeContainer>

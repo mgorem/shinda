@@ -7,11 +7,13 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import HistoryIcon from '@mui/icons-material/History';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import ControlPointDuplicateIcon from '@mui/icons-material/ControlPointDuplicate';
-// import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-// import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+
+import { large } from '../../large-responsive'
+import { tablet } from '../../tablet-responsive'
+import { mobile } from '../../mobile-ressponsive'
 
 const CenterContainer = styled.div`
   margin: 15px 10px;
@@ -337,6 +339,12 @@ const CenterSection = (props) => {
     {id: 1, name: "benard lili", odd: "5.3x", amount: "1,200", profit: "+2250", hash: "431717030c86a...",},
   ])
 
+  const [betAmount, setBetAmount] = useState('')
+  const handleBetAmount = (e) => {
+    setBetAmount(e.target.value)
+    console.log(e.target.value)
+  }
+
   const handleStats = () => {
     setStats(
 
@@ -408,7 +416,7 @@ const CenterSection = (props) => {
           </RocketCircle>
           <RightMidBarBottomContainer>
 
-            {/* Amount Input */}
+            {/* Bet Amount Input */}
             <BetAmountInput>
             <Box
                   component="form"
@@ -437,8 +445,12 @@ const CenterSection = (props) => {
                    border:" 1px solid #fff",
                    borderRadius:"5px",
                    fontWeight:60,
-                  }}/>
+                  }}
+                  onChange={handleBetAmount}
+                  value={betAmount}
+                  />
             </BetAmountInput>
+            <h2>{ betAmount }</h2>
             <RightMidBarBet>
               BET
             </RightMidBarBet>

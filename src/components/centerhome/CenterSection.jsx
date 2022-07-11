@@ -217,13 +217,13 @@ const MidBarBottomInnerContainer = styled.div`
 `
 const BottomBarCenter = styled.div`
   width: 100%;
-  height: 23vh;
+  height: 27vh;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 25px;
 `
-const LeftCenterBottomBar = styled.div`
+const LeftBottomBarCenter = styled.div`
   flex: 1;
   width: 100%;
   height: 100%;
@@ -235,7 +235,7 @@ const LeftCenterBottomBar = styled.div`
   align-items: center;
   justify-content: center;
 `
-const LeftCenterBottomBarIconContainer = styled.div`
+const BottomBarIconContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -258,46 +258,67 @@ const BottomNameContainer = styled.div`
   font-size: 10px;
   font-weight: 600;
 `
-const TopRightBottomBarCenter = styled.div`
-  width: 100%;
-  height: 40px;
-  background-color: #2d323f;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-const SingleTopRightBarContainer = styled.div`
-  width: 100%;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-right: 10px;
-  padding-left: 10px;
-`
-const RightBottomBarCenter = styled.div`
-  flex: 6;
+const BottomBar = styled.div`
+  flex: 7;
   width: 100%;
   height: 100%;
-  background-color: #04030e;
-`
-const SingleRightBottomBarContainer = styled.div`
+  /* background-color: green; */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 10px;
-  color: green;
+  justify-content: center;
 `
-const SingleBottomBarContainer = styled.div`
+const RightBottomBarCenter = styled.div`
+  flex: 7;
   width: 100%;
-  height: 20px;
+  height: 100%;
+  /* background-color: red; */
+  color: #fff;
+  margin: 2px auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-right: 10px;
-  padding-left: 10px;
+  overflow: hidden;
 `
-
+const RightBottomBarCenterHeadings = styled.div`
+  width: 100%;
+  height: 30px;
+  background-color: #242832;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+`
+const RightBottomBarCenterInner = styled.div`
+  width: 100%;
+  height: 20%;
+  background-color: #01060e;
+  color: #fff;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const SingleInnerContainer = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #01060e;
+  margin: 0 5px;
+  padding: 3px 10px;
+`
+const SingleHeadingInnerContainer = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #242832;
+  margin: 3px 5px;
+  padding: 3px 0;
+`
 
 const CenterSection = (props) => {
 
@@ -307,6 +328,13 @@ const CenterSection = (props) => {
     {id: 1, value: '4.3x',},
     {id: 1, value: '5.0x',},
     {id: 1, value: '5.3x',},
+  ])
+  const [playerInfo, setPlayerInfo] = useState([
+    {id: 1, name: "njugush simon", odd: "2.5x", amount: "1,200", profit: "+3000", hash: "431717030c86a...",},
+    {id: 1, name: "solomon kite", odd: "2.3x", amount: "4,000", profit: "+1000", hash: "431717030c86a...",},
+    {id: 1, name: "atambo loki", odd: "4.2x", amount: "2,500", profit: "+800", hash: "431717030c86a...",},
+    {id: 1, name: "benard lili", odd: "5.3x", amount: "1,200", profit: "+2250", hash: "431717030c86a...",},
+    {id: 1, name: "benard lili", odd: "5.3x", amount: "1,200", profit: "+2250", hash: "431717030c86a...",},
   ])
 
   const handleStats = () => {
@@ -321,6 +349,9 @@ const CenterSection = (props) => {
 
   return (
     <CenterContainer>
+
+      {/* CENTER TOP BAR */}
+      {/* CENTER TOP NAVIGATION */}
       <TopBarCenter>
         <TopBarAccountContainer>
           <AccountCircleOutlinedIcon style={{color:'#ff7f00', marginRight:20}}/>
@@ -334,6 +365,9 @@ const CenterSection = (props) => {
           ))}
         </TopBarStatsContainer>
       </TopBarCenter>
+
+      {/* CENTER ROCKET ANIMATION AREA */}
+      
       <MidBarCenter>
         <LeftMidBarCenter>
           <Wallet>
@@ -405,7 +439,6 @@ const CenterSection = (props) => {
                    fontWeight:60,
                   }}/>
             </BetAmountInput>
-
             <RightMidBarBet>
               BET
             </RightMidBarBet>
@@ -463,61 +496,72 @@ const CenterSection = (props) => {
           </RightMidBarBottomInfo>
         </RightMidBarCenter>
       </MidBarCenter>
+      
+      {/* CENTER BOTTOM BAR */}
+      {/* CENTER SUPPORT BAR */}
       <BottomBarCenter>
-      <LeftCenterBottomBar>
-      <LeftCenterBottomBarIconContainer>
-          <BottomIconContainer>
-            <HistoryIcon />
-            </BottomIconContainer>
-          <BottomNameContainer>History</BottomNameContainer>
-      </LeftCenterBottomBarIconContainer>
-      <LeftCenterBottomBarIconContainer>
-          <BottomIconContainer><SupportAgentIcon /></BottomIconContainer>
-          <BottomNameContainer>Customer Care</BottomNameContainer>
-      </LeftCenterBottomBarIconContainer>
-      <LeftCenterBottomBarIconContainer>
-          <BottomIconContainer>
-            <ControlPointDuplicateIcon />
-          </BottomIconContainer>
-          <BottomNameContainer>Refer and Earn</BottomNameContainer>
-      </LeftCenterBottomBarIconContainer>
-      </LeftCenterBottomBar>
-      <RightBottomBarCenter>
-        <TopRightBottomBarCenter>
-          <SingleTopRightBarContainer>
-            PLAYER
-          </SingleTopRightBarContainer>
-          <SingleTopRightBarContainer>
-            X-ODD
-          </SingleTopRightBarContainer>
-          <SingleTopRightBarContainer>
-            BET AMOUNT
-          </SingleTopRightBarContainer>
-          <SingleTopRightBarContainer>
-            PROFIT
-          </SingleTopRightBarContainer>
-          <SingleTopRightBarContainer>
-            HASH
-          </SingleTopRightBarContainer>
-        </TopRightBottomBarCenter>
-        <SingleRightBottomBarContainer>
-          <SingleBottomBarContainer>
-              Name
-            </SingleBottomBarContainer>
-            <SingleBottomBarContainer>
-              2.5x
-            </SingleBottomBarContainer>
-            <SingleBottomBarContainer>
-              1,200
-            </SingleBottomBarContainer>
-            <SingleBottomBarContainer>
-              +3000
-            </SingleBottomBarContainer>
-            <SingleBottomBarContainer>
-              431717030a86a...
-          </SingleBottomBarContainer>
-        </SingleRightBottomBarContainer>
-      </RightBottomBarCenter>
+        <LeftBottomBarCenter>
+          <BottomBarIconContainer>
+              <BottomIconContainer>
+                <HistoryIcon />
+                </BottomIconContainer>
+              <BottomNameContainer>History</BottomNameContainer>
+          </BottomBarIconContainer>
+          <BottomBarIconContainer>
+              <BottomIconContainer><SupportAgentIcon /></BottomIconContainer>
+              <BottomNameContainer>Customer Care</BottomNameContainer>
+          </BottomBarIconContainer>
+          <BottomBarIconContainer>
+              <BottomIconContainer>
+                <ControlPointDuplicateIcon />
+              </BottomIconContainer>
+              <BottomNameContainer>Refer and Earn</BottomNameContainer>
+          </BottomBarIconContainer>
+        </LeftBottomBarCenter>
+
+        {/* RIGHT BOTTOM BAR */}
+        <BottomBar>
+          <RightBottomBarCenterHeadings>
+            <SingleHeadingInnerContainer>
+                PLAYER
+            </SingleHeadingInnerContainer>
+            <SingleHeadingInnerContainer>
+                X-ODD
+            </SingleHeadingInnerContainer>
+            <SingleHeadingInnerContainer>
+                BET AMOUNT
+            </SingleHeadingInnerContainer>
+            <SingleHeadingInnerContainer>
+                PROFIT
+            </SingleHeadingInnerContainer>
+            <SingleHeadingInnerContainer>
+                HASH
+            </SingleHeadingInnerContainer>
+            </RightBottomBarCenterHeadings>
+          <RightBottomBarCenter>
+
+            {/* Single Inner User Container */}
+            {playerInfo.map((player) => (
+            <RightBottomBarCenterInner key={playerInfo.id} style={{color:"green"}}>
+              <SingleInnerContainer>
+              {player.name}
+              </SingleInnerContainer>
+              <SingleInnerContainer>
+              {player.odd}
+              </SingleInnerContainer>
+              <SingleInnerContainer>
+              {player.amount}
+              </SingleInnerContainer>
+              <SingleInnerContainer>
+              {player.profit}
+              </SingleInnerContainer>
+              <SingleInnerContainer>
+              {player.hash}
+              </SingleInnerContainer>
+            </RightBottomBarCenterInner>
+            ))}
+          </RightBottomBarCenter>
+        </BottomBar>
       </BottomBarCenter>
     </CenterContainer>
   )

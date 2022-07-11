@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import styled from 'styled-components'
-// import { feeds } from '../../userfeed';
-
+import { useState } from 'react'
 
 const SingleCardContainer = styled.div`
   width: 90%;
@@ -12,14 +10,17 @@ const SingleCardContainer = styled.div`
   background-color: #242832;
   color: #fff;
   overflow: hidden;
-`
-const CardContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 15px auto;
-  
+  justify-content: center;
 `
+// const CardContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   margin: 15px auto;
+  
+// `
 const InnerNameContainer = styled.div`
   
 `
@@ -42,7 +43,7 @@ const InnerAmountContainer = styled.div`
   
 `
 const RightSection = () => {
-
+  
   const [feeds, setFeeds] = useState([
     {id: 1, name: "John land", stats: "2.2x", amount: 3000},
     {id: 1, name: "John land", stats: "2.2x", amount: 3000},
@@ -62,17 +63,17 @@ const RightSection = () => {
     <>
     {feeds.map((feed) => (
     <SingleCardContainer key={feeds.id}>
-          <CardContainer>
-            <InnerNameContainer style={{marginLeft:"20px"}}>
-              {feeds.name}
+          {/* <CardContainer> */}
+            <InnerNameContainer style={{marginRight:"20px"}}>
+              <p>{feed.name}</p>
             </InnerNameContainer>
             <InnerStatsContainer>
-              {feeds.stats}
+              <p>{feed.stats}</p>
             </InnerStatsContainer>
             <InnerAmountContainer style={{marginRight:"20px"}}>
-              {feeds.amount}
+              <p>{feed.amount}</p>
             </InnerAmountContainer>
-          </CardContainer>
+          {/* </CardContainer> */}
     </SingleCardContainer>
     ))}
     </>

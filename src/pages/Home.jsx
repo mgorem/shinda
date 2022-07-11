@@ -1,8 +1,9 @@
-import React from 'react'
+import { useState } from 'react'
 import LeftSection from '../components/lefthome/LeftSection'
 import CenterSection from '../components/centerhome/CenterSection'
 import RightSection from '../components/righthome/RightSection'
 import styled from 'styled-components'
+// import { feeds } from '../userfeed'
 
 
 const HomeContainer = styled.div`
@@ -32,6 +33,22 @@ const Right = styled.div`
 
 const Home = () => {
 
+  const [feeds, setFeeds] = useState([
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+    {id: 1, name: "John land", stats: "2.2x", amount: 3000},
+  ])
+
   return (
     <HomeContainer>
     <Left>
@@ -41,7 +58,7 @@ const Home = () => {
       <CenterSection/>
     </Center>
     <Right>
-      <RightSection />
+      <RightSection feeds={feeds}/>
     </Right>
     </HomeContainer>
   )

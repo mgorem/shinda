@@ -14,10 +14,11 @@ import TextField from '@mui/material/TextField';
 // Media Query
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import { large } from '../../large-responsive'
-import { tablet } from '../../tablet-responsive'
-import { mobile } from '../../mobile-ressponsive'
-import { mini } from '../../mini-responsive'
+import { large } from '../../responsive/large-responsive'
+import { tablet } from '../../responsive/tablet-responsive'
+import { smallerTablet } from '../../responsive/tablet-smaller'
+import { mobile } from '../../responsive/mobile-ressponsive'
+import { mini } from '../../responsive/mini-responsive'
 
 const CenterContainer = styled.div`
   margin: 15px 10px;
@@ -28,6 +29,9 @@ const TopBarCenter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${tablet({flexDirection: "row-reverse",
+            
+  })}
 `
 const TopBarAccountContainer = styled.div`
   flex: 1;

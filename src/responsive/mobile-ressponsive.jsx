@@ -3,7 +3,8 @@ import {css} from 'styled-components'
 
 export const mobile = (props) => {
     return css`
-        @media only screen and (max-width: 448px) {
+    // 1052 - 475px for devices larger than a mobile
+        @media only screen and (max-width: 475px) {
             ${props}
         }
     `

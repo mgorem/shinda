@@ -6,10 +6,11 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 import PolicyIcon from '@mui/icons-material/Policy';
 import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
 import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
-import { large } from '../../large-responsive'
-import { tablet } from '../../tablet-responsive'
-import { mobile } from '../../mobile-ressponsive'
-import { mini } from '../../mini-responsive'
+import { large } from '../../responsive/large-responsive'
+import { tablet } from '../../responsive/tablet-responsive'
+import { smallerTablet } from '../../responsive/tablet-smaller'
+import { mobile } from '../../responsive/mobile-ressponsive'
+import { mini } from '../../responsive/mini-responsive'
 
 
 const Container = styled.div`
@@ -60,9 +61,10 @@ const SingleIconContainer = styled.div`
     border-right: 5px solid #ff7f00;
     border-radius: 10px;
   }
-  ${tablet({fontSize: "5px",
+  ${tablet({
            fontWeight: "600",
            padding: "10px ",
+           marginRight: "3px"
   })}
 `
 const IconBox = styled.div`

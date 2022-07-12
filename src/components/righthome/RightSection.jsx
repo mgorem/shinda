@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { useState } from 'react'
-import { large } from '../../large-responsive'
-import { tablet } from '../../tablet-responsive'
-import { mobile } from '../../mobile-ressponsive'
-import { mini } from '../../mini-responsive'
+import { large } from '../../responsive/large-responsive'
+import { tablet } from '../../responsive/tablet-responsive'
+import { smallerTablet } from '../../responsive/tablet-smaller'
+import { mobile } from '../../responsive/mobile-ressponsive'
+import { mini } from '../../responsive/mini-responsive'
 
 const SingleCardContainer = styled.div`
   width: 90%;

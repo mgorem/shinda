@@ -6,10 +6,11 @@ import RightSection from '../components/righthome/RightSection'
 import MenuIcon from '@mui/icons-material/Menu';
 
 // import { feeds } from '../userfeed'
-import { large } from '../large-responsive'
-import { tablet } from '../tablet-responsive'
-import { mobile } from '../mobile-ressponsive'
-import { mini } from '../mini-responsive'
+import { large } from '../responsive/large-responsive'
+import { tablet } from '../responsive/tablet-responsive'
+import { smallerTablet } from '../responsive/tablet-smaller'
+import { mobile } from '../responsive/mobile-ressponsive'
+import { mini } from '../responsive/mini-responsive'
 
 
 const HomeContainer = styled.div`
@@ -26,7 +27,7 @@ const Left = styled.div`
   flex: 2;
   background-color: #242832;
   border: none;
-  ${mobile({display: "none",
+  ${smallerTablet({display: "none",
             
   })}
 `
@@ -41,6 +42,12 @@ const Right = styled.div`
   /* border-top-right-radius: 10px;
   border-bottom-right-radius: 10px; */
   ${large({oveflow: "hidden"
+  })}
+  ${tablet({display: "none",
+            
+  })}
+  ${smallerTablet({display: "none",
+            
   })}
 `
 

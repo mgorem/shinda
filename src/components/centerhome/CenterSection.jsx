@@ -11,9 +11,14 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-import { large } from '../../large-responsive'
-import { tablet } from '../../tablet-responsive'
-import { mobile } from '../../mobile-ressponsive'
+// Media Query
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+import { large } from '../../responsive/large-responsive'
+import { tablet } from '../../responsive/tablet-responsive'
+import { smallerTablet } from '../../responsive/tablet-smaller'
+import { mobile } from '../../responsive/mobile-ressponsive'
+import { mini } from '../../responsive/mini-responsive'
 
 const CenterContainer = styled.div`
   margin: 15px 10px;
@@ -24,6 +29,9 @@ const TopBarCenter = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${tablet({flexDirection: "row-reverse",
+            
+  })}
 `
 const TopBarAccountContainer = styled.div`
   flex: 1;
@@ -68,6 +76,12 @@ const LeftMidBarCenter = styled.div`
   height: 100%;
   border: none;
   margin-right: 20px;
+  ${mobile({display: "none",
+            
+  })}
+  ${tablet({display: "none",
+            
+          })}
 `
 const Wallet = styled.button`
   width: 95%;
@@ -148,6 +162,13 @@ const RightMidBarCenter = styled.div`
   align-items: center;
   justify-content: center;
   background-repeat: no-repeat;
+  ${mobile({
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+
+            
+  })}
 `
 const RocketCircle = styled.div`
   width: 300px;
@@ -161,6 +182,20 @@ const RocketCircle = styled.div`
   justify-content: center;
   z-index: 999;
   opacity: 0.7;
+  ${mobile({display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "150px",
+            height: "150px",
+            marginTop: "10px",
+  })}
+  ${mini({
+          justifyContent: "center",
+          width: "100px",
+          height: "100px",
+          marginBottom: "150px",
+  })}
 `
 const RightMidBarBottomContainer = styled.div`
   width: 100%;
@@ -168,11 +203,19 @@ const RightMidBarBottomContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  ${mobile({
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+
+            
+  })}
 `
 const RightMidBarBet = styled.button`
   width: 15%;
   height:40px;
   margin-top: 30px;
+  margin-right: 60px;
   color: #ff7f00;
   font-size: 15px;
   font-weight: 600;
@@ -194,6 +237,13 @@ const RightMidBarBottomInfo = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${mobile({
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+
+            
+  })}
 `
 const BetAmountInput = styled.div`
   display: flex;
@@ -201,6 +251,13 @@ const BetAmountInput = styled.div`
   align-items: flex-start;
   justify-content: center;
   color: #ff7f00;
+  ${mobile({
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+
+            
+  })}
 `
 const MidBarBottomContainer = styled.div`
   display: flex;
@@ -224,6 +281,16 @@ const BottomBarCenter = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 25px;
+  ${mobile({
+            fontSize: "7px",
+            fontWeight: "600"
+  })}
+  ${mini({flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "7px",
+          fontWeight: "600"
+  })}
 `
 const LeftBottomBarCenter = styled.div`
   flex: 1;
@@ -236,6 +303,12 @@ const LeftBottomBarCenter = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${mini({display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "7px",
+          fontWeight: "600"
+  })}
 `
 const BottomBarIconContainer = styled.div`
   width: 100%;
@@ -251,6 +324,10 @@ const BottomIconContainer = styled.div`
   justify-content: center;
   margin-left: 20px;
   margin-right: 20px;
+  ${mobile({
+            paddingLeft: "10px",
+            fontSize: "10px",
+  })}
 `
 const BottomNameContainer = styled.div`
   flex: 4;
@@ -259,6 +336,11 @@ const BottomNameContainer = styled.div`
   justify-content: flex-start;
   font-size: 10px;
   font-weight: 600;
+  ${mobile({
+            fontSize: "7px",
+            fontWeight: "600",
+            paddingRight: "10px",
+  })}
 `
 const BottomBar = styled.div`
   flex: 7;
@@ -323,6 +405,16 @@ const SingleHeadingInnerContainer = styled.div`
 `
 
 const CenterSection = (props) => {
+
+  // Media Query Impllementation
+  const styles = {
+    rocketIconStyle: {
+      fontSize: "60px",
+      ['@media (max-width:375px)']: { // eslint-disable-line no-useless-computed-key
+        fontSize: "30px",
+      }
+    }
+  }
 
   const [stats, setStats] = useState([
     {id: 1, value: '0.2x',},
@@ -410,7 +502,7 @@ const CenterSection = (props) => {
         </LeftMidBarCenter>
         <RightMidBarCenter>
           <RocketCircle>
-            <RocketIcon style={{fontSize:60}}/>
+            <RocketIcon style={{fontSize:60}} />
             <img src="images/rocketflames1.png" alt="rocket flames" style={{width:"70px", height:"70px"}}/>
             <h1 style={{fontSize:40, fontWeight: 500}}>5.20x</h1>
           </RocketCircle>

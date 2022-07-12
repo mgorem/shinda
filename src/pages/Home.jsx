@@ -6,25 +6,30 @@ import RightSection from '../components/righthome/RightSection'
 import MenuIcon from '@mui/icons-material/Menu';
 
 // import { feeds } from '../userfeed'
-import { large } from '../large-responsive'
-import { tablet } from '../tablet-responsive'
-import { mobile } from '../mobile-ressponsive'
+import { large } from '../responsive/large-responsive'
+import { tablet } from '../responsive/tablet-responsive'
+import { smallerTablet } from '../responsive/tablet-smaller'
+import { mobile } from '../responsive/mobile-ressponsive'
+import { mini } from '../responsive/mini-responsive'
 
 
 const HomeContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
   display: flex;
   overflow: hidden;
-  background-color: #080808;
-  /* padding: 20px; */
+  ${mobile({display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+
+  })}
 `
 const Left = styled.div`
   flex: 2;
   background-color: #242832;
   border: none;
-  /* ${tablet({visibility: "hidden",
-  })} */
+  ${smallerTablet({display: "none",
+            
+  })}
 `
 const Center = styled.div`
   flex: 8;
@@ -34,9 +39,15 @@ const Center = styled.div`
 const Right = styled.div`
   flex: 2;
   background-color: #01060e;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  /* border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; */
   ${large({oveflow: "hidden"
+  })}
+  ${tablet({display: "none",
+            
+  })}
+  ${smallerTablet({display: "none",
+            
   })}
 `
 

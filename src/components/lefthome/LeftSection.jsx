@@ -9,6 +9,7 @@ import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
 import { large } from '../../large-responsive'
 import { tablet } from '../../tablet-responsive'
 import { mobile } from '../../mobile-ressponsive'
+import { mini } from '../../mini-responsive'
 
 
 const Container = styled.div`
@@ -17,6 +18,9 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  /* ${mobile({visibility: "hidden",
+            
+  })} */
 `
 const LeftTopSection = styled.div`
   flex: 6;

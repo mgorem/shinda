@@ -9,22 +9,26 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { large } from '../large-responsive'
 import { tablet } from '../tablet-responsive'
 import { mobile } from '../mobile-ressponsive'
+import { mini } from '../mini-responsive'
 
 
 const HomeContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
   display: flex;
   overflow: hidden;
-  background-color: #080808;
-  /* padding: 20px; */
+  ${mobile({display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+
+  })}
 `
 const Left = styled.div`
   flex: 2;
   background-color: #242832;
   border: none;
-  /* ${tablet({visibility: "hidden",
-  })} */
+  ${mobile({display: "none",
+            
+  })}
 `
 const Center = styled.div`
   flex: 8;
@@ -34,8 +38,8 @@ const Center = styled.div`
 const Right = styled.div`
   flex: 2;
   background-color: #01060e;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  /* border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; */
   ${large({oveflow: "hidden"
   })}
 `

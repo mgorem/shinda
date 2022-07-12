@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { large } from '../../large-responsive'
 import { tablet } from '../../tablet-responsive'
 import { mobile } from '../../mobile-ressponsive'
+import { mini } from '../../mini-responsive'
 
 const SingleCardContainer = styled.div`
   width: 90%;
@@ -18,6 +19,7 @@ const SingleCardContainer = styled.div`
   justify-content: center;
   ${large({fontSize: "10px",
            fontWeight: "600",
+           display: "none",
   })}
 `
 const InnerNameContainer = styled.div`

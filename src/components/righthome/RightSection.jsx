@@ -20,7 +20,7 @@ const SingleCardContainer = styled.div`
   justify-content: center;
   ${large({fontSize: "10px",
            fontWeight: "600",
-           display: "none",
+           overflow: "hidden",
   })}
 `
 const InnerNameContainer = styled.div`

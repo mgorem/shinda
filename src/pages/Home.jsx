@@ -38,7 +38,8 @@ const Center = styled.div`
   `
 const Right = styled.div`
   flex: 2;
-  background-color: #01060e;
+  /* background-color: #01060e; */
+  background-color: red;
   /* border-top-right-radius: 10px;
   border-bottom-right-radius: 10px; */
   ${large({oveflow: "hidden"
@@ -50,7 +51,12 @@ const Right = styled.div`
             
   })}
 `
-
+const RightS = styled.div`
+  flex: 2;
+  background-color: red;
+  color: #fff;
+  overflow: hidden;
+  `
 const Home = () => {
 
   const [feeds, setFeeds] = useState([
@@ -80,7 +86,9 @@ const Home = () => {
       <CenterSection/>
     </Center>
     <Right>
+      <RightS>
       <RightSection feeds={feeds}/>
+      </RightS>
     </Right>
     </HomeContainer>
   )

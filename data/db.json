@@ -1,0 +1,16 @@
+{
+    "feeds": [
+      {
+        "id": 1, 
+        "name": "John land", 
+        "stats": "2.2x", 
+        "amount": 3000
+      },
+      {
+        "id": 2, 
+        "name": "Becky Brown", 
+        "stats": "2.5x", 
+        "amount": 1500
+      }
+    ]
+  }

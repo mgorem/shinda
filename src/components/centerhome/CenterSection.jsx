@@ -215,9 +215,9 @@ const RightMidBarBet = styled.button`
   width: 15%;
   height:40px;
   margin-top: 30px;
-  margin-right: 60px;
+  margin-right: 40px;
   color: #ff7f00;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   background-color: transparent;
   border: 2px solid #ff7f00;
@@ -245,12 +245,19 @@ const RightMidBarBottomInfo = styled.div`
             
   })}
 `
-const BetAmountInput = styled.div`
+const BetAmountInput = styled.input`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   color: #ff7f00;
+  background-color:"transparent";
+  border: 1px solid #ff7f00;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight:600;
+  background: transparent;
+  padding: 20px 15px;
   ${mobile({
             flexDirection: "column",
             alignItems: "center",
@@ -436,6 +443,12 @@ const CenterSection = (props) => {
     setBetAmount(e.target.value)
     console.log(e.target.value)
   }
+  const [autoCash, setAutoCash] = useState('')
+  const handleAutoCash = () => {
+    setAutoCash(
+
+    )
+  }
 
   const handleStats = () => {
     setStats(
@@ -509,8 +522,14 @@ const CenterSection = (props) => {
           <RightMidBarBottomContainer>
 
             {/* Bet Amount Input */}
-            <BetAmountInput>
-            <Box
+            <BetAmountInput
+              type="number"
+              placeholder="Kes 500" 
+              required
+              value={ betAmount }
+              onChange={(e) => setBetAmount(e.target.value)}
+            >
+            {/* <Box
                   component="form"
                   sx={{
                     '& > :not(style)': { m: 1, width: '25ch' },
@@ -540,15 +559,20 @@ const CenterSection = (props) => {
                   }}
                   onChange={handleBetAmount}
                   value={betAmount}
-                  />
+                  /> */}
             </BetAmountInput>
             <h2>{ betAmount }</h2>
             <RightMidBarBet>
               BET
             </RightMidBarBet>
 
-          <BetAmountInput>
-            <Box
+          <BetAmountInput
+            type="number" 
+            required
+            value={ autoCash }
+            onChange={handleAutoCash}
+          >
+            {/* <Box
                   component="form"
                   sx={{
                     '& > :not(style)': { m: 1, width: '25ch' },
@@ -575,7 +599,7 @@ const CenterSection = (props) => {
                    border:" 1px solid #fff",
                    borderRadius:"5px",
                    fontWeight:60,
-                  }}/>
+                  }}/> */}
             </BetAmountInput>
           </RightMidBarBottomContainer>
           <RightMidBarBottomInfo>
